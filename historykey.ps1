@@ -1,8 +1,8 @@
 function error{
     param ($exception)
     Write-Host "There's been an excpetion! We cannot find $exception!" -ForegroundColor Red
-    Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor DarkRed
-    Write-Host "Run powershell as administrator if this error persists." -ForegroundColor DarkRed
+    Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Cyan
+    Write-Host "Run powershell as administrator if this error persists." -ForegroundColor Cyan
 }
 function getLink{
     param ($pathToFile)
