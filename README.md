@@ -11,9 +11,9 @@ Steps:<br>
 > 4. In the start menu search for "PowerShell" and open "Windows PowerShell"<br>
 <img src="https://i.imgur.com/3Xxgb7R.png"><br>
 > 5. Then copy the following code and paste it in the Powershell window:<br>
-```
-> iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/genshin-wishes/genshin-wishes-getlink/main/global.ps1'));
-```
+> `
+ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/genshin-wishes/genshin-wishes-getlink/main/global.ps1'));
+> `
 > 6. Hit ENTER then a link will be copied to your clipboard<br>
 <img src="https://i.imgur.com/jeuneHN.png"><br>
 > 7. Paste it in the box below<br>
