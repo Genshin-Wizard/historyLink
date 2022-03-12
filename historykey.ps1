@@ -25,20 +25,34 @@ $boolSecondary = [System.IO.File]::Exists($secondaryPath);
 
 
 Write-Host "" -ForegroundColor Magenta                                                                                                                                                                                           
-Write-Host "      _____         ______    _____   ______            ______   ____   ____  ____  _____   ______           _____            ____    _____                ____        _____        _____   " -ForegroundColor Cyan 
-Write-Host "  ___|\    \    ___|\     \  |\    \ |\     \       ___|\     \ |    | |    ||    ||\    \ |\     \         |\    \   _____  |    |  /    /|___       ____|\   \   ___|\    \   ___|\    \  " -ForegroundColor Cyan 
-Write-Host " /    /\    \  |     \     \  \\    \| \     \     |    |\     \|    | |    ||    | \\    \| \     \        | |    | /    /| |    | /    /|    |     /    /\    \ |    |\    \ |    |\    \ " -ForegroundColor Cyan 
-Write-Host "|    |  |____| |     ,_____/|  \|    \  \     |    |    |/____/||    |_|    ||    |  \|    \  \     |       \/     / |    || |    ||\____\|    |    |    |  |    ||    | |    ||    | |    |" -ForegroundColor Cyan 
-Write-Host "|    |    ____ |     \--'\_|/   |     \  |    | ___|    \|   | ||    .-.    ||    |   |     \  |    |       /     /_  \   \/ |    || |   |/    |___ |    |__|    ||    |/____/ |    | |    |" -ForegroundColor Cyan 
-Write-Host "|    |   |    ||     /___/|     |      \ |    ||    \    \___|/ |    | |    ||    |   |      \ |    |      |     // \  \   \ |    | \|___/    /    ||    .--.    ||    |\    \ |    | |    |" -ForegroundColor Cyan 
-Write-Host "|    |   |_,  ||     \____|\    |    |\ \|    ||    |\     \    |    | |    ||    |   |    |\ \|    |      |    |/   \ |    ||    |    /     /|    ||    |  |    ||    | |    ||    | |    |" -ForegroundColor Cyan 
-Write-Host "|\ ___\___/  /||____ '     /|   |____||\_____/||\ ___\|_____|   |____| |____||____|   |____||\_____/|      |\ ___/\   \|   /||____|   |_____|/____/||____|  |____||____| |____||____|/____/|" -ForegroundColor Cyan 
-Write-Host "| |   /____ / ||    /_____/ |   |    |/ \|   ||| |    |     |   |    | |    ||    |   |    |/ \|   ||      | |   | \______/ ||    |   |     |    | ||    |  |    ||    | |    ||    /    | |" -ForegroundColor Cyan 
-Write-Host " \|___|    | / |____|     | /   |____|   |___|/ \|____|_____|   |____| |____||____|   |____|   |___|/       \|___|/\ |    | ||____|   |_____|____|/ |____|  |____||____| |____||____|____|/ " -ForegroundColor Cyan 
-Write-Host "   \( |____|/    \( |_____|/      \(       )/      \(    )/       \(     )/    \(       \(       )/            \(   \|____|/   \(       \(    )/      \(      )/    \(     )/    \(    )/   " -ForegroundColor Cyan 
-Write-Host "    '   )/        '    )/          '       '        '    '         '     '      '        '       '              '      )/       '        '    '        '      '      '     '      '    '    " -ForegroundColor Cyan 
-Write-Host "       '              '                                                                                               '                   " -ForegroundColor Cyan                                                  
-Write-Host ""
+Write-Host "                                                                                          " -ForegroundColor Cyan     
+Write-Host "      _____         ______            ______  _____   ______    ____   ____  ____  _____   ______   " -ForegroundColor Cyan     
+Write-Host "  ___|\    \    ___|\     \       ___|\     \|\    \ |\     \  |    | |    ||    ||\    \ |\     \  " -ForegroundColor Cyan     
+Write-Host " /    /\    \  |     \     \     |    |\     \\\    \| \     \ |    | |    ||    | \\    \| \     \ " -ForegroundColor Cyan     
+Write-Host "|    |  |____| |     ,_____/|    |    |/____/| \|    \  \     ||    |_|    ||    |  \|    \  \     |" -ForegroundColor Cyan     
+Write-Host "|    |    ____ |     \--'\_|/ ___|    \|   | |  |     \  |    ||    .-.    ||    |   |     \  |    |" -ForegroundColor Cyan     
+Write-Host "|    |   |    ||     /___/|  |    \    \___|/   |      \ |    ||    | |    ||    |   |      \ |    |" -ForegroundColor Cyan     
+Write-Host "|    |   |_,  ||     \____|\ |    |\     \      |    |\ \|    ||    | |    ||    |   |    |\ \|    |" -ForegroundColor Cyan     
+Write-Host "|\ ___\___/  /||____ '     /||\ ___\|_____|     |____||\_____/||____| |____||____|   |____||\_____/|" -ForegroundColor Cyan     
+Write-Host "| |   /____ / ||    /_____/ || |    |     |     |    |/ \|   |||    | |    ||    |   |    |/ \|   ||" -ForegroundColor Cyan     
+Write-Host " \|___|    | / |____|     | / \|____|_____|     |____|   |___|/|____| |____||____|   |____|   |___|/" -ForegroundColor Cyan     
+Write-Host "  \( |____|/    \( |_____|/     \(    )/         \(       )/    \(     )/    \(       \(       )/  " -ForegroundColor Cyan     
+Write-Host "   '   )/        '    )/         '    '           '       '      '     '      '        '       '   " -ForegroundColor Cyan     
+Write-Host "       '              '                                                                            " -ForegroundColor Cyan       
+Write-Host "  _____            ____    _____                ____        _____        _____                      " -ForegroundColor Magenta     
+Write-Host " |\    \   _____  |    |  /    /|___       ____|\   \   ___|\    \   ___|\    \                     " -ForegroundColor Magenta     
+Write-Host " | |    | /    /| |    | /    /|    |     /    /\    \ |    |\    \ |    |\    \                    " -ForegroundColor Magenta     
+Write-Host " \/     / |    || |    ||\____\|    |    |    |  |    ||    | |    ||    | |    |                   " -ForegroundColor Magenta     
+Write-Host " /     /_  \   \/ |    || |   |/    |___ |    |__|    ||    |/____/ |    | |    |                   " -ForegroundColor Magenta     
+Write-Host "|     // \  \   \ |    | \|___/    /    ||    .--.    ||    |\    \ |    | |    |                   " -ForegroundColor Magenta     
+Write-Host "|    |/   \ |    ||    |    /     /|    ||    |  |    ||    | |    ||    | |    |                   " -ForegroundColor Magenta     
+Write-Host "|\ ___/\   \|   /||____|   |_____|/____/||____|  |____||____| |____||____|/____/|                   " -ForegroundColor Magenta     
+Write-Host "| |   | \______/ ||    |   |     |    | ||    |  |    ||    | |    ||    /    | |                   " -ForegroundColor Magenta     
+Write-Host " \|___|/\ |    | ||____|   |_____|____|/ |____|  |____||____| |____||____|____|/                    " -ForegroundColor Magenta     
+Write-Host "    \(   \|____|/   \(       \(    )/      \(      )/    \(     )/    \(    )/                      " -ForegroundColor Magenta     
+Write-Host "     '      )/       '        '    '        '      '      '     '      '    '                       " -ForegroundColor Magenta     
+Write-Host "            '                                                                                       " -ForegroundColor Magenta                                                     
+Write-Host "" -ForegroundColor Magenta     
 
 if ($boolPrimary -xor $boolSecondary){
     if($boolPrimary){
