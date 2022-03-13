@@ -1,9 +1,18 @@
+# Log File paths
+$primaryPath  = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\Genshin Impact\output_log.txt");
+$secondaryPath = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\$([char]0x539f)$([char]0x795e)\output_log.txt");
+$boolPrimary = [System.IO.File]::Exists($primaryPath);
+$boolSecondary = [System.IO.File]::Exists($secondaryPath);
+
+# Error Function
 function error{
     param ($exception)
-    Write-Host "There's been an excpetion! We cannot find $exception!" -ForegroundColor Red
+    Write-Host "There's been an excpetion! We cannot find the wish history url!" -ForegroundColor Red
     Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Cyan
     Write-Host "Run powershell as administrator if this error persists." -ForegroundColor Cyan
 }
+
+# Grab History Link
 function getLink{
     param ($pathToFile)
     $logs = Get-Content -Path $pathToFile
@@ -18,13 +27,6 @@ function getLink{
     Write-Host "That's it! Paste the link to the required field in our discord." -ForegroundColor Cyan
 }
 
-$primaryPath  = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\Genshin Impact\output_log.txt");
-$secondaryPath = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\$([char]0x539f)$([char]0x795e)\output_log.txt");
-$boolPrimary = [System.IO.File]::Exists($primaryPath);
-$boolSecondary = [System.IO.File]::Exists($secondaryPath);
-
-
-Write-Host "" -ForegroundColor Magenta                                                                                                                                                                                           
 Write-Host "                                                                                          " -ForegroundColor Cyan     
 Write-Host "      _____         ______            ______  _____   ______    ____   ____  ____  _____   ______   " -ForegroundColor Cyan     
 Write-Host "  ___|\    \    ___|\     \       ___|\     \|\    \ |\     \  |    | |    ||    ||\    \ |\     \  " -ForegroundColor Cyan     
@@ -37,8 +39,7 @@ Write-Host "|\ ___\___/  /||____ '     /||\ ___\|_____|     |____||\_____/||____
 Write-Host "| |   /____ / ||    /_____/ || |    |     |     |    |/ \|   |||    | |    ||    |   |    |/ \|   ||" -ForegroundColor Cyan     
 Write-Host " \|___|    | / |____|     | / \|____|_____|     |____|   |___|/|____| |____||____|   |____|   |___|/" -ForegroundColor Cyan     
 Write-Host "  \( |____|/    \( |_____|/     \(    )/         \(       )/    \(     )/    \(       \(       )/  " -ForegroundColor Cyan     
-Write-Host "   '   )/        '    )/         '    '           '       '      '     '      '        '       '   " -ForegroundColor Cyan     
-Write-Host "       '              '                                                                            " -ForegroundColor Cyan       
+Write-Host "   '   )/        '    )/         '    '           '       '      '     '      '        '       '   " -ForegroundColor Cyan          
 Write-Host "  _____            ____    _____                ____        _____        _____                      " -ForegroundColor Red     
 Write-Host " |\    \   _____  |    |  /    /|___       ____|\   \   ___|\    \   ___|\    \                     " -ForegroundColor Red     
 Write-Host " | |    | /    /| |    | /    /|    |     /    /\    \ |    |\    \ |    |\    \                    " -ForegroundColor Red     
