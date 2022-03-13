@@ -16,5 +16,5 @@ Steps:<br>
 > `
 > 6. Hit ENTER then a link will be copied to your clipboard<br>
 <img src="https://i.imgur.com/1a5WoV0.png"><br>
-> 7. Paste it in the box below<br>
+> 7. Paste it into the required field in our discord<br>
 </p>
