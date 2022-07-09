@@ -15,6 +15,6 @@ Steps:<br>
  iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/hattvr/historyLink/master/historykey.ps1'));
 > `
 > 6. Hit ENTER to have the link copied to your clipboard<br>
-<img src="https://i.imgur.com/1a5WoV0.png"><br>
+<img src="https://i.imgur.com/Sf9VGBZ.png"><br>
 > 7. Paste it into the required field in our discord<br>
 </p>
