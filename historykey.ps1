@@ -28,18 +28,18 @@ function getLink{
 }
 
 Write-Host "                                                                                          " -ForegroundColor Cyan     
-Write-Host "      _____         ______            ______  _____   ______    ____   ____  ____  _____   ______   " -ForegroundColor Cyan     
-Write-Host "  ___|\    \    ___|\     \       ___|\     \|\    \ |\     \  |    | |    ||    ||\    \ |\     \  " -ForegroundColor Cyan     
-Write-Host " /    /\    \  |     \     \     |    |\     \\\    \| \     \ |    | |    ||    | \\    \| \     \ " -ForegroundColor Cyan     
-Write-Host "|    |  |____| |     ,_____/|    |    |/____/| \|    \  \     ||    |_|    ||    |  \|    \  \     |" -ForegroundColor Cyan     
-Write-Host "|    |    ____ |     \--'\_|/ ___|    \|   | |  |     \  |    ||    .-.    ||    |   |     \  |    |" -ForegroundColor Cyan     
-Write-Host "|    |   |    ||     /___/|  |    \    \___|/   |      \ |    ||    | |    ||    |   |      \ |    |" -ForegroundColor Cyan     
-Write-Host "|    |   |_,  ||     \____|\ |    |\     \      |    |\ \|    ||    | |    ||    |   |    |\ \|    |" -ForegroundColor Cyan     
-Write-Host "|\ ___\___/  /||____ '     /||\ ___\|_____|     |____||\_____/||____| |____||____|   |____||\_____/|" -ForegroundColor Cyan     
-Write-Host "| |   /____ / ||    /_____/ || |    |     |     |    |/ \|   |||    | |    ||    |   |    |/ \|   ||" -ForegroundColor Cyan     
-Write-Host " \|___|    | / |____|     | / \|____|_____|     |____|   |___|/|____| |____||____|   |____|   |___|/" -ForegroundColor Cyan     
-Write-Host "  \( |____|/    \( |_____|/     \(    )/         \(       )/    \(     )/    \(       \(       )/  " -ForegroundColor Cyan     
-Write-Host "   '   )/        '    )/         '    '           '       '      '     '      '        '       '   " -ForegroundColor Cyan          
+Write-Host "      _____         ______  _____   ______            ______   ____   ____  ____  _____   ______   " -ForegroundColor Cyan
+Write-Host "  ___|\    \    ___|\     \|\    \ |\     \       ___|\     \ |    | |    ||    ||\    \ |\     \  " -ForegroundColor Cyan
+Write-Host " /    /\    \  |     \     \\\    \| \     \     |    |\     \|    | |    ||    | \\    \| \     \ " -ForegroundColor Cyan
+Write-Host "|    |  |____| |     ,_____/|\|    \  \     |    |    |/____/||    |_|    ||    |  \|    \  \     |" -ForegroundColor Cyan
+Write-Host "|    |    ____ |     \--'\_|/ |     \  |    | ___|    \|   | ||    .-.    ||    |   |     \  |    |" -ForegroundColor Cyan
+Write-Host "|    |   |    ||     /___/|   |      \ |    ||    \    \___|/ |    | |    ||    |   |      \ |    |" -ForegroundColor Cyan
+Write-Host "|    |   |_,  ||     \____|\  |    |\ \|    ||    |\     \    |    | |    ||    |   |    |\ \|    |" -ForegroundColor Cyan
+Write-Host "|\ ___\___/  /||____ '     /| |____||\_____/||\ ___\|_____|   |____| |____||____|   |____||\_____/|" -ForegroundColor Cyan
+Write-Host "| |   /____ / ||    /_____/ | |    |/ \|   ||| |    |     |   |    | |    ||    |   |    |/ \|   ||" -ForegroundColor Cyan
+Write-Host " \|___|    | / |____|     | / |____|   |___|/ \|____|_____|   |____| |____||____|   |____|   |___|/" -ForegroundColor Cyan
+Write-Host "  \( |____|/    \( |_____|/    \(       )/      \(    )/       \(     )/    \(       \(       )/  " -ForegroundColor Cyan
+Write-Host "   '   )/        '    )/        '       '        '    '         '     '      '        '       '   " -ForegroundColor Cyan
 Write-Host "           _____            ____    _____                ____        _____        _____                      " -ForegroundColor Red     
 Write-Host "          |\    \   _____  |    |  /    /|___       ____|\   \   ___|\    \   ___|\    \                     " -ForegroundColor Red     
 Write-Host "          | |    | /    /| |    | /    /|    |     /    /\    \ |    |\    \ |    |\    \                    " -ForegroundColor Red     
