@@ -119,7 +119,7 @@ if ($wishUrl) {
     Write-Host "Link from $wishUrlDate has successfully been copied to your clipboard!" -ForegroundColor Green
     Write-Host "That's it! Paste the link to the required field in our discord." -ForegroundColor Cyan
 } else {
-    Write-Host "There's been an excpetion! We cannot find the wish history url!" -ForegroundColor Red
+    Write-Host "There's been an exception! We cannot find the wish history url!" -ForegroundColor Red
     Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Cyan
     pause
 }
