@@ -117,7 +117,6 @@ if ($wishUrl) {
     $current = Get-Date
     $timeDiff = New-TimeSpan -Start $wishUrlDate -End $current | % {$_.Hours}
 
-    Write-Host $wishUrl
     if ($timeDiff -ge 24) {
         Write-Host "WARNING: Link found is older than 24 hours and might be expired! Open Wish History again to fetch a new link if it doesn't work" -ForegroundColor Yellow
         Read-Host -Prompt "Press ENTER to copy link anyway or CTRL+C to quit"
