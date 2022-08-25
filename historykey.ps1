@@ -54,7 +54,7 @@ $regexPattern = "(?m).:/.+(GenshinImpact_Data|YuanShen_Data)"
 $logMatch = $logs -match $regexPattern
 
 if (-Not $logMatch) {
-    Write-Host "There's been an excpetion! We cannot find the wish history url!" -ForegroundColor Red
+    Write-Host "There's been an exception! We cannot find the wish history url!" -ForegroundColor Red
     Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Cyan
     pause
     return
