@@ -29,33 +29,28 @@ Write-Host "              '      )/       '        '    '        '      '      '
 Write-Host "                     '                                                                                       " -ForegroundColor Red                                                     
 Write-Host "" -ForegroundColor Magenta     
 
-$logLocation = "%userprofile%\AppData\LocalLow\miHoYo\Genshin Impact\output_log.txt"
-$logPath = [System.Environment]::ExpandEnvironmentVariables($logLocation);
-if (-Not [System.IO.File]::Exists($logPath)) {
-    Write-Host "Unable to locate the log file! Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Red
-    if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {  
-        Write-Host "Do you want to try to run the script as Administrator? Press [ENTER] to continue, or any key to cancel." -ForegroundColor Cyan
-        $keyInput = [Console]::ReadKey($true).Key
-        if ($keyInput -ne "13") {
-            return
-        }
-        $arguments = "& '" +$myinvocation.mycommand.definition + "'"
-        Start-Process powershell -Verb runAs -ArgumentList "-noexit", $arguments
-        break
+$reg = $args[0]
+$logPath = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\Genshin Impact\output_log.txt");
+if (!(Test-Path $logPath) -or $reg -eq "china") {
+    $logPath = [System.Environment]::ExpandEnvironmentVariables("%userprofile%\AppData\LocalLow\miHoYo\$([char]0x539f)$([char]0x795e)\output_log.txt");
+    if (!(Test-Path $logPath)) {
+        Write-Host "Unable to locate the log file! Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Red
+        if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {  
+            Write-Host "Do you want to try to run the script as Administrator? Press [ENTER] to continue, or any key to cancel."
+            $keyInput = [Console]::ReadKey($true).Key
+            if ($keyInput -ne "13") {
+                return
+            }
+            $arguments = "& '" +$myinvocation.mycommand.definition + "'"
+            Start-Process powershell -Verb runAs -ArgumentList "-noexit $arguments $reg"
+            break
+        } 
+        return
     }
-    return
 }
 
-Try {
-    $logs = Get-Content -Path $logPath -ErrorAction Stop
-} Catch [System.Management.Automation.ItemNotFoundException] {
-    Write-Host "There's been an excpetion! We cannot find the wish history url!" -ForegroundColor Red
-    Write-Host "Make sure you have opened the wish history ingame before trying to grab the link!" -ForegroundColor Cyan
-    pause
-    return
-}
-
-$regexPattern = "(?<=^Warmup file )(.*GenshinImpact_Data)(?=.*$)"
+$logs = Get-Content -Path $logPath
+$regexPattern = "(?m).:/.+(GenshinImpact_Data|YuanShen_Data)"
 $logMatch = $logs -match $regexPattern
 
 if (-Not $logMatch) {
@@ -68,7 +63,6 @@ if (-Not $logMatch) {
 $gameDataPath = ($logMatch | Select -Last 1) -match $regexPattern
 $gameDataPath = Resolve-Path $Matches[0]
 
-# Credits to PrimeCicada for finding this path
 $cachePath = "$gameDataPath\\webCaches\\Service Worker\\CacheStorage\\f944a42103e2b9f8d6ee266c44da97452cde8a7c"
 if (Test-Path $cachePath) {
     $cacheFolder = Get-ChildItem $cachePath | sort -Property LastWriteTime -Descending | select -First 1
@@ -78,15 +72,15 @@ if (Test-Path $cachePath) {
     
     if ($wishUrl) {
         $wishUrl = $Matches[0]
-
+    
         $wishUrlDate = $logEntry -match "\w{3}, \d{2} \w{3} \d{4} \d\d:\d\d:\d\d GMT"
         if ($wishUrlDate) {
             $wishUrlDate = $Matches[0] -as [datetime]
             $current = Get-Date
             $timeDiff = New-TimeSpan -Start $wishUrlDate -End $current | % {$_.Hours}
             if ($timeDiff -ge 24) {
-            Write-Host "WARNING: Link found is older than 24 hours and might be expired! Open Wish History again to fetch a new link if it doesn't work" -ForegroundColor Red
-            Read-Host -Prompt "Press ENTER to copy link anyway or CTRL-C to quit" -ForegroundColor Cyan
+                Write-Host "WARNING: Link found is older than 24 hours and might be expired! Open Wish History again to fetch a new link if it doesn't work" -ForegroundColor Yellow
+                Read-Host -Prompt "Press ENTER to copy link anyway or CTRL+C to quit"
             }
         }
         Set-Clipboard -Value $wishUrl
