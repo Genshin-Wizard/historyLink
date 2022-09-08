@@ -45,8 +45,12 @@ function processWishUrl($wishUrl) {
         return $False
     }
 
-    Set-Clipboard -Value $wishURL
-    Write-Host $wishUrl -ForegroundColor White
+    try {
+        Set-Clipboard -Value $wishURL
+    }
+    catch {
+        Write-Host $wishUrl -ForegroundColor White
+    }
     Write-Host "Link has successfully been copied to your clipboard!" -ForegroundColor Green
     Write-Host "That's it! Paste the link to the required field in our discord." -ForegroundColor Cyan
     return $True
