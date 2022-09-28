@@ -12,7 +12,7 @@ Steps:<br>
 <img src="https://i.imgur.com/3Xxgb7R.png"><br>
 > 5. Then copy the following code and paste it in the Powershell window:<br>
 > `
- iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/hattvr/historyLink/master/historykey.ps1'));
+ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Genshin-Wizard/historyLink/master/historykey.ps1'));
 > `
 > 6. Hit ENTER to have the link copied to your clipboard<br>
 <img src="https://i.imgur.com/Sf9VGBZ.png"><br>
