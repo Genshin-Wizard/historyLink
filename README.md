@@ -11,9 +11,9 @@ Steps:<br>
 > 4. In the start menu search for "PowerShell" and open "Windows PowerShell"<br>
 <img src="https://i.imgur.com/3Xxgb7R.png"><br>
 > 5. Then copy the following code and paste it in the Powershell window:<br>
-> `
+```ps1
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex "&{$((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Genshin-Wizard/historyLink/master/historykey.ps1'))} global"
-> `
+```
 > 6. Hit ENTER to have the link copied to your clipboard<br>
 <img src="https://i.imgur.com/Sf9VGBZ.png"><br>
 > 7. Paste it into the required field in our discord<br>
