@@ -35,7 +35,7 @@ $logLocationChina = "%userprofile%\AppData\LocalLow\miHoYo\$([char]0x539f)$([cha
 $reg = $args[0]
 $apiHost = "hk4e-api-os.hoyoverse.com" 
 if ($reg -eq "china") {
-  Write-Host "Using China cache location"
+  Write-Host "[INFO] Using China cache log location..." -ForegroundColor Cyan
   $logLocation = $logLocationChina
   $apiHost = "hk4e-api.mihoyo.com"
 }
