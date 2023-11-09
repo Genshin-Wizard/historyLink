@@ -77,7 +77,9 @@ if ($matches.Length -eq 0) {
 }
 
 $gamedir = $matches[1]
-$cachefile = "$gamedir/webCaches/2.16.0.0/Cache/Cache_Data/data_2"
+$webcachePath = Resolve-Path "$gamedir/webCaches"
+$cacheVerPath = Get-Item (Get-ChildItem -Path $webcachePath | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
+$cachefile = Resolve-Path "$cacheVerPath/Cache/Cache_Data/data_2"
 $tmpfile = "$env:TEMP/ch_data_2"
 
 Copy-Item $cachefile -Destination $tmpfile
@@ -115,7 +117,7 @@ for ($i = $found.Length - 1; $i -ge 0; $i -= 1) {
         $linkFound = $true
         break
     }
-    Start-Sleep 1
+    Sleep 1
 }
 
 Remove-Item $tmpfile
