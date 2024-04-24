@@ -28,6 +28,9 @@ Write-Host "              '      )/       '        '    '        '      '      '
 Write-Host "                     '                                                                                       " -ForegroundColor Red                                                     
 Write-Host "" -ForegroundColor Magenta     
 
+# script credits:
+# author: jogerj
+
 function processWishUrl($wishUrl) {
     if ($wishUrl -match "https:\/\/webstatic") {
         if ($wishUrl -match "hk4e_global") {
@@ -55,8 +58,8 @@ function processWishUrl($wishUrl) {
     return $True
 }
 
-$logLocation = [System.Environment]::ExpandEnvironmentVariables("%userprofile%/AppData/LocalLow/miHoYo/Genshin Impact/output_log.txt");
-$logLocationChina = [System.Environment]::ExpandEnvironmentVariables("%userprofile%/AppData/LocalLow/miHoYo/$([char]0x539f)$([char]0x795e)/output_log.txt");
+$logPathGlobal = [System.Environment]::ExpandEnvironmentVariables("%userprofile%/AppData/LocalLow/miHoYo/Genshin Impact/output_log.txt");
+$logPathChina = [System.Environment]::ExpandEnvironmentVariables("%userprofile%/AppData/LocalLow/miHoYo/$([char]0x539f)$([char]0x795e)/output_log.txt");
 $globalExists = Test-Path $logPathGlobal;
 $cnExists = Test-Path $logPathChina;
 
