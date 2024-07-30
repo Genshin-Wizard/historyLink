@@ -36,12 +36,12 @@ function processWishUrl($wishUrl) {
 
     if ($wishUrl -match "https:\/\/webstatic") {
         if ($wishUrl -match "hk4e_global") {
-        $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e-sg.hoyoverse.com/gacha_info/api/getGachaLog?"
-        }
-        else {
-        $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e.mihoyo.com/gacha_info/api/getGachaLog?"
+            $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e-sg.hoyoverse.com/gacha_info/api/getGachaLog?"
+        } else {
+            $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e.mihoyo.com/gacha_info/api/getGachaLog?"
         }
     }
+
     $urlResponse = Invoke-RestMethod -URI $wishUrl -ContentType 'application/json' -Method Get
 
     if ($urlResponseMessage -ne "OK") {
@@ -106,7 +106,7 @@ if (-Not $logMatch) {
     return
 }
 
-$gameDataPath = ($logMatch | Select -Last 1) -match $regexPattern
+$gameDataPath = ($logMatch | Select-Object -Last 1) -match $regexPattern
 $gameDataPath = Resolve-Path $Matches[0]
 
 $webcachePath = Resolve-Path "$gameDataPath/webCaches"
