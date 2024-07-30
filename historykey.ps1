@@ -32,16 +32,17 @@ Write-Host "" -ForegroundColor Magenta
 # author: jogerj
 
 function processWishUrl($wishUrl) {
+    $wishUrl = "$wishUrl&page=1&size=5&gacha_type=301"
+
     if ($wishUrl -match "https:\/\/webstatic") {
         if ($wishUrl -match "hk4e_global") {
-            $checkUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://hk4e-api-os.mihoyo.com/event/gacha_info/api/getGachaLog?"
-        } else {
-            $checkUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://hk4e-api.mihoyo.com/event/gacha_info/api/getGachaLog?"
+        $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e-sg.hoyoverse.com/gacha_info/api/getGachaLog?"
         }
-        $urlResponseMessage = Invoke-RestMethod -URI $checkUrl | % {$_.message}
-    } else {
-        $urlResponseMessage = Invoke-RestMethod -URI $wishUrl | % {$_.message}
+        else {
+        $wishUrl = $wishUrl -replace "https:\/\/webstatic.+html\?", "https://public-operation-hk4e.mihoyo.com/gacha_info/api/getGachaLog?"
+        }
     }
+    $urlResponse = Invoke-RestMethod -URI $wishUrl -ContentType 'application/json' -Method Get
 
     if ($urlResponseMessage -ne "OK") {
         Write-Host "There's been an exception! Link has been found but is expired/invalid!" -ForegroundColor Yellow
@@ -116,7 +117,7 @@ if (Test-Path $cachePath) {
     $tmpFile = "$env:TEMP/ch_data_2"
     Copy-Item $cachePath -Destination $tmpFile
     $content = Get-Content -Encoding UTF8 -Raw $tmpfile
-    $splitted = $content -split "1/0/" | Select -Last 1
+    $splitted = $content -split "1/0/" | Select-Object -Last 1
     $found = $splitted -match "https.+?game_biz=hk4e_(global|cn)"
     Remove-Item $tmpFile
     
