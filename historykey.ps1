@@ -44,7 +44,7 @@ function processWishUrl($wishUrl) {
 
     $urlResponse = Invoke-RestMethod -URI $wishUrl -ContentType 'application/json' -Method Get
 
-    if ($urlResponseMessage -ne "OK") {
+    if ($urlResponse.message -ne "OK") {
         Write-Host "There's been an exception! Link has been found but is expired/invalid!" -ForegroundColor Yellow
         Write-Host "Open the wish history ingame before trying again to fetch a new link!" -ForegroundColor Cyan
         return $False
