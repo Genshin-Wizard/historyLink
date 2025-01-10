@@ -1,4 +1,4 @@
-"# historyLink" 
+# historyLink
 <p align='center'>
 A quick and easy way to get your history link on PC! Follow the steps below and use your link to start tracking your wishes today!<br>
 
